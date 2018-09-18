@@ -9,8 +9,8 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
+ */
+//  Uzkrauna home page - base.blade.php faila
 Route::get('/', function () {
-    return view('welcome');
+    return view('base');
 });
