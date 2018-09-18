@@ -11,8 +11,10 @@
 |
  */
 //  Uzkrauna home page - base.blade.php faila
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('index');
+// });
 
 Route::resource('hosts', 'HostsController');
+
+
