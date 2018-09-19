@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Host;
+use DB;
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -49,6 +50,7 @@ class HostsController extends Controller
 
 
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -56,7 +58,7 @@ class HostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('inc.create');
     }
 
     /**
@@ -67,7 +69,24 @@ class HostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $this->validate($request, [
+            'provider' => 'required',
+            'product' => 'required',
+            'plan' => 'required'
+        ]);
+
+        // create host
+        $host = new Host;
+        $host->provider = $request->input('provider');
+        $host->product = $request->input('product');
+        $host->plan = $request->input('plan');
+        $host->save();
+
+        return redirect('/')->with('success', 'New Host created');
+
+
+
     }
 
     /**

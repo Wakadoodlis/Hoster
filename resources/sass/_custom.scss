@@ -3,8 +3,15 @@
 }
 
 .jumbotron {
+    padding-bottom: 2rem;
+
     h1 {
         font-weight: 700;
         letter-spacing: .5rem;
     }
+}
+
+.pad-off {
+    padding: 0;
+    padding-left: 2rem;
 }
