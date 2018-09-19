@@ -17,4 +17,6 @@
 
 Route::resource('hosts', 'HostsController');
 
+Route::get('/', 'HostsController@index');
+
 

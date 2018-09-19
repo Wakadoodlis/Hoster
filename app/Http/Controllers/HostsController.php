@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Host;
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
 
@@ -15,22 +16,33 @@ class HostsController extends Controller
      */
     public function index()
     {
+        $hosts = Host::all();
 
         $client = new Client;
         $crawler = $client->request('GET', 'https://hosting.review/best-web-hosting/');
-        $oldPrice = $crawler->filter('.old-price')->first()->text();
-        $salePrice = $crawler->filter('.sale-price')->first()->text();
+        // $oldPrice = $crawler->filter('.old-price')->first()->text();
+        // $salePrice = $crawler->filter('.sale-price')->first()->text();
         $prices = array();
-        $oldPrices = $crawler->filter('.old-price');
+        $oldPrices = $crawler->filter('.price-container');
         foreach ($oldPrices as $price) {
             $prices[] = $price->nodeValue;
+
+        };
+
+        $providers = array();
+        $allProviders = $crawler->filter('td')->children('a');
+        foreach ($allProviders as $provider) {
+            $providers[] = $provider->nodeValue;
+            var_dump($providers);
         }
 
 
         return view('index', [
-            'oldPrice' => $oldPrice,
-            'salePrice' => $salePrice,
-            'prices' => $prices
+            // 'oldPrice' => $oldPrice,
+            // 'salePrice' => $salePrice,
+            'prices' => $prices,
+            'providers' => $providers,
+            'hosts' => $hosts
         ]);
 
     }
