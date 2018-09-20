@@ -12,8 +12,8 @@
 <h3><span class='edit-span'>Product:</span>{{$host->product}}</h3>
 <h3><span class='edit-span'>Plan:</span> {{$host->plan}}</h3>
 <h3><span class='edit-span'>Price:</span> {{$host->price}} $</h3>
-<h3><span class='edit-span'>Host created at:</span>{{$host->created_at}}</h3>
-<h3><span class='edit-span'>Host updated at:</span>{{$host->updated_at}}</h3>
+<h6><span class='edit-span host-time'>Host created at:</span>{{$host->created_at}}</h6>
+<h6><span class='edit-span host-time'>Host updated at:</span>{{$host->updated_at}}</h6>
 
 
 

@@ -10496,6 +10496,10 @@ a.text-dark:focus {
   font-weight: 400;
 }
 
+.edit-span.host-time {
+  font-size: .9rem;
+}
+
 .btn-marg {
   margin-left: 2.4rem;
 }
