@@ -6,7 +6,7 @@
     </a>
     <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="{{ url('hosts/create') }}">Create host <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ url('hosts/create') }}">Add a new host plan <span class="sr-only">(current)</span></a>
         </li>
     </ul>   
   </nav>

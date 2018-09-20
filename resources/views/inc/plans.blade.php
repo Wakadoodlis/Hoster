@@ -37,7 +37,7 @@
 
 {{-- VISOS KAINOS IS https://hosting.review/best-web-hosting/ --}}
 
-<h1>All hosts prices:</h1>
+<h1>All host prices:</h1>
     <ul>
          @foreach($prices as $price)
          <li> {{$price}} </li>

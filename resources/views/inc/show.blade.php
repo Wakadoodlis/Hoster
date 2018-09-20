@@ -26,7 +26,7 @@
 {!!Form::open(['action' => ['HostsController@destroy',$host->id], 'method' => 'POST', 'class' => 'float-right mr-3' ]) !!}
 
 {{Form::hidden('_method', 'DELETE')}}
-{{fORM::submit('Delete', ['class'=>  'btn btn-danger'])}}
+{{fORM::submit('Delete', ['class'=>  'btn btn-danger mb-3'])}}
 
 
 {!!Form::close()!!}
