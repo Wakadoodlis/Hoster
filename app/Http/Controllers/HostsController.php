@@ -87,6 +87,7 @@ class HostsController extends Controller
         $host->plan = $request->input('plan');
         $host->price = $request->input('price');
         $host->provider_url = $request->input('provider_url');
+
         $host->save();
 
         return redirect('/')->with('success', 'New Host created');

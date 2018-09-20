@@ -1,3 +1,4 @@
+
 @include('inc.head')
 @include('inc.navbar')
 
@@ -39,8 +40,6 @@
 
 
  </div>  {{-- END CONTAINER--}}
-
-
 
 
 

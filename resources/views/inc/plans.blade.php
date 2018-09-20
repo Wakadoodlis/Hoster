@@ -24,6 +24,7 @@
                 <th> <a href="/hosts/{{$host->id}}">{{$host->provider}} </a></th>
                 <th>{{$host->product}}</th>
                 <th>{{$host->plan}}</th>
+                <th>{{$host->price}} $ </th>
             </tr>
             @endforeach
         @else
@@ -35,6 +36,8 @@
 </table>
 
 {{-- VISOS KAINOS IS https://hosting.review/best-web-hosting/ --}}
+
+<h1>All hosts prices:</h1>
     <ul>
          @foreach($prices as $price)
          <li> {{$price}} </li>
