@@ -10508,6 +10508,14 @@ a.text-dark:focus {
   width: 80%;
 }
 
+.plan-price {
+  list-style: none;
+}
+
+.plan-price li {
+  margin-bottom: 1rem;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
