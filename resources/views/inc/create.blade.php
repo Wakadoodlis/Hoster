@@ -7,6 +7,7 @@
     <p class="lead pb-1">Fill all neccessary fields to create a new host.</p> 
  </div>
 
+ {{-- CREATE NEW HOST FORMA --}}
  <div class="container">
     @include('inc.messages')
 
@@ -31,12 +32,13 @@
           {{Form::label('price', 'Price')}}
           {{Form::text('price', '', ['class' => 'form-control', 'placeholder' =>'Price...'])}}
       </div>
+      {{-- MYGTUKAS --}}
       {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
 
     {!! Form::close() !!}
 
 
- </div>
+ </div>  {{-- END CONTAINER--}}
 
 
 

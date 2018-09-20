@@ -1,12 +1,11 @@
-
+{{-- EXSISTING PLANS ATVAIZDAVIMAS--}}
 <div>
     <h2 class="h2">Exsisting plans</h2>
 </div>
-@include('inc.messages')
+@include('inc.messages') {{-- FORM VALIDACIJOS ZINUTES--}}
 <table class="table">
     <thead>
-      <tr>
-        
+      <tr> 
         {{-- <th scope="col">#</th> --}}
         <th scope="col">ID</th>
         <th scope="col">Provider</th>
@@ -17,9 +16,8 @@
       </tr>
     </thead>
     <tbody>
-        
-            
-        @if(count($hosts) > 0)
+        {{-- HOSTS ATVAIZDAVIMAS IS DB--}}   
+        @if(count($hosts) > 0) {{-- TIKRINIMAS JEI DB NEBUS HOSTU--}} 
             @foreach($hosts as $host)
             <tr scope="row">
                 <th>{{$host->id}}</th>
@@ -31,30 +29,20 @@
         @else
             <p> No hosts found </p>
         @endif 
-        
-        
+         
     </tbody>
-
-
-
 
 </table>
 
-
-  <h3> </h3>
+{{-- VISOS KAINOS IS https://hosting.review/best-web-hosting/ --}}
     <ul>
-      @foreach($prices as $price)
-      <li> {{$price}} </li>
-      @endforeach
-     </ul>
+         @foreach($prices as $price)
+         <li> {{$price}} </li>
+         @endforeach
+    </ul>
         
       
-  
-        {{-- <ul>
-        @foreach($prices as $price)
-         <li> {{$price}} </li>
-        @endforeach
-        </ul> --}}
+
 
         {{-- @foreach($providers as $provider)
           {{$provider}} 

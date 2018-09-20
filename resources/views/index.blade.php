@@ -1,6 +1,6 @@
 @include('inc.head')
    
-        @include('inc.navbar')
+        @include('inc.navbar') {{-- navbaras--}}
         
         <div class="container">
             <div class="jumbotron">
@@ -8,8 +8,8 @@
                 <p class="lead">This is a simple app, where You can find best prices for Your web hosting.</p>
                 <hr class="my-4 mb-1">
              </div>
-             @include('inc.plans')
-        </div>
+             @include('inc.plans') {{-- EXSISTING PLANS--}}
+        </div> {{-- END CONTAINER--}}
 
-@include('inc.legs')
+@include('inc.legs') {{-- html galas--}}
         

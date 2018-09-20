@@ -7,6 +7,7 @@ use App\Host;
 use DB;
 use Goutte\Client;
 use GuzzleHttp\Client as GuzzleClient;
+use Symfony\Component\CssSelector\CssSelectorConverter;
 
 class HostsController extends Controller
 {
@@ -18,7 +19,7 @@ class HostsController extends Controller
     public function index()
     {
         $hosts = Host::all();
-
+      // CRAWLER
         $client = new Client;
         $crawler = $client->request('GET', 'https://hosting.review/best-web-hosting/');
         // $oldPrice = $crawler->filter('.old-price')->first()->text();
@@ -31,11 +32,14 @@ class HostsController extends Controller
         };
 
         $providers = array();
-        $allProviders = $crawler->filter('td')->children('a');
-        foreach ($allProviders as $provider) {
-            $providers[] = $provider->nodeValue;
-            var_dump($providers);
-        }
+        $class = $crawler->filterXPath('//td/a')->attr('title');
+        // var_dump($class);
+
+        // foreach ((array)$class as $klase) {
+        //     $providers[] = $klase;
+        //     var_dump($providers);
+
+        // };
 
 
         return view('index', [
@@ -69,7 +73,7 @@ class HostsController extends Controller
      */
     public function store(Request $request)
     {
-        //validation
+        //validaCIJA
         $this->validate($request, [
             'provider' => 'required',
             'product' => 'required',
