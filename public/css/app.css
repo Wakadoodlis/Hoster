@@ -10489,6 +10489,17 @@ a.text-dark:focus {
   padding-left: 2rem;
 }
 
+.edit-span {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-right: .6rem;
+  font-weight: 400;
+}
+
+.btn-marg {
+  margin-left: 2.4rem;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

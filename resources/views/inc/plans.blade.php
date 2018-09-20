@@ -2,12 +2,12 @@
 <div>
     <h2 class="h2">Exsisting plans</h2>
 </div>
-
+@include('inc.messages')
 <table class="table">
     <thead>
       <tr>
         
-        <th scope="col">#</th>
+        {{-- <th scope="col">#</th> --}}
         <th scope="col">ID</th>
         <th scope="col">Provider</th>
         <th scope="col">Product</th>
@@ -17,20 +17,22 @@
       </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
+        
+            
         @if(count($hosts) > 0)
             @foreach($hosts as $host)
-            <th>{{$host->id}}</th>
-            <th>{{$host->provider}}</th>
-            <th>{{$host->product}}</th>
-            <th>{{$host->plan}}</th>
+            <tr scope="row">
+                <th>{{$host->id}}</th>
+                <th> <a href="/hosts/{{$host->id}}">{{$host->provider}} </a></th>
+                <th>{{$host->product}}</th>
+                <th>{{$host->plan}}</th>
+            </tr>
             @endforeach
         @else
             <p> No hosts found </p>
         @endif 
         
-          </tr>
+        
     </tbody>
 
 

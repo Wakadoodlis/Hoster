@@ -81,6 +81,8 @@ class HostsController extends Controller
         $host->provider = $request->input('provider');
         $host->product = $request->input('product');
         $host->plan = $request->input('plan');
+        $host->price = $request->input('price');
+        $host->provider_url = $request->input('provider_url');
         $host->save();
 
         return redirect('/')->with('success', 'New Host created');
@@ -97,7 +99,8 @@ class HostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $host = Host::find($id);
+        return view('inc.show')->with('host', $host);
     }
 
     /**
@@ -108,7 +111,8 @@ class HostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $host = Host::find($id);
+        return view('inc.edit')->with('host', $host);
     }
 
     /**
@@ -120,7 +124,23 @@ class HostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //validation
+        $this->validate($request, [
+            'provider' => 'required',
+            'product' => 'required',
+            'plan' => 'required'
+        ]);
+
+        // create host
+        $host = Host::find($id);
+        $host->provider = $request->input('provider');
+        $host->product = $request->input('product');
+        $host->plan = $request->input('plan');
+        $host->price = $request->input('price');
+        $host->provider_url = $request->input('provider_url');
+        $host->save();
+
+        return redirect('/')->with('success', 'Host updated');
     }
 
     /**
@@ -131,6 +151,9 @@ class HostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $host = Host::find($id);
+        $host->delete();
+
+        return redirect('/')->with('success', 'Host Removed');
     }
 }

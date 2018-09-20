@@ -1,23 +1,21 @@
 @include('inc.head')
 @include('inc.navbar')
-
 <div class="jumbotron pad-off">
-    <h1 class="display-5">Create a new HOST!</h1>
-    <hr class="my-2 mb-1">
-    <p class="lead pb-1">Fill all neccessary fields to create a new host.</p> 
+    <h1 class="display-6 p-3">Edit hosts</h1>
+   
  </div>
 
- <div class="container">
+<div class="container">
     @include('inc.messages')
 
-    {!! Form::open(['action'=>'HostsController@store', 'method'=>'POST']) !!}
+    {!! Form::open(['action'=>['HostsController@update', $host->id], 'method'=>'POST']) !!}
       <div class="form-group">
           {{Form::label('provider', 'Provider')}}
-          {{Form::text('provider', '', ['class' => 'form-control', 'placeholder' =>'Provider...'])}}
+          {{Form::text('provider', $host->provider, ['class' => 'form-control', 'placeholder' =>'Provider...'])}}
       </div>
       <div class="form-group">
             {{Form::label('provider_url', 'Provider_url')}}
-            {{Form::text('provider_url', '', ['class' => 'form-control', 'placeholder' =>'https://...'])}}
+            {{Form::text('provider_url', $host->provider_url, ['class' => 'form-control', 'placeholder' =>'https://...'])}}
         </div>
       <div class="form-group">
           {{Form::label('product', 'Product')}}
@@ -25,22 +23,19 @@
       </div>
       <div class="form-group">
           {{Form::label('plan', 'Plan')}}
-          {{Form::text('plan', '', ['class' => 'form-control', 'placeholder' =>'Plan...'])}}
+          {{Form::text('plan', $host->plan, ['class' => 'form-control', 'placeholder' =>'Plan...'])}}
       </div>
       <div class="form-group">
           {{Form::label('price', 'Price')}}
-          {{Form::text('price', '', ['class' => 'form-control', 'placeholder' =>'Price...'])}}
+          {{Form::text('price', $host->price, ['class' => 'form-control', 'placeholder' =>'Price...'])}}
       </div>
+      {{Form::hidden('_method','PUT')}}
       {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
 
     {!! Form::close() !!}
 
 
  </div>
-
-
-
-
 
 
 
