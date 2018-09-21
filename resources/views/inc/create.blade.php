@@ -8,36 +8,38 @@
     <p class="lead pb-1">Fill all neccessary fields to create a new plan.</p> 
  </div>
 
- {{-- CREATE NEW HOST FORMA --}}
+
  <div class="container">
     <div class="row">
         <div class="col-md-7">
     @include('inc.messages')
-
+ {{-- CREATE NEW HOST FORMA --}}
             {!! Form::open(['action'=>'HostsController@store', 'method'=>'POST']) !!}
-
+ {{-- provider url inputas --}}
                 <div class="form-group">
                     {{Form::label('provider_url', 'Provider_url')}}
                     {{Form::text('provider_url', '', ['class' => 'form-control labels', 'placeholder' =>'https://...'])}}
                 </div>
+                 {{-- product url inputas --}}
                 <div class="form-group">
                     {{Form::label('product', 'Product')}}
                     {{Form::select('product', ['Web Host' => 'Web Host','VPS' => 'VPS Hosting', 'Website builder' => 'Website Builder', 'Cloud Hosting' => 'Cloud Hosting', 'Domain Checker' => 'Domain Checker'], 'Web Host')}}
                 </div>
+                 {{-- plan inputas --}}
                 <div class="form-group">
                     {{Form::label('plan', 'Plan name')}}
                     {{Form::text('plan', '', ['class' => 'form-control labels', 'placeholder' =>'Plan...'])}}
                     </div>
-
+ {{-- provider  inputas --}}
                 <div class="form-group">
                     {{Form::label('provider', 'Provider')}}
                     {{Form::text('provider', '', ['class' => 'form-control labels', 'placeholder' =>'Provider...'])}}
                 </div>
-
-                <div class="form-group">
+ {{-- price url inputas --}}
+                {{-- <div class="form-group">
                     {{Form::label('price', 'Price')}}
                     {{Form::text('price', '', ['class' => 'form-control labels', 'placeholder' =>'Price...'])}}
-                </div>
+                </div> --}}
             {{-- MYGTUKAS --}}
                 {{Form::submit('Add Host plan',['class'=>'btn btn-primary'])}}
 

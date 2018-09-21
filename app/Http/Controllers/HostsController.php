@@ -19,7 +19,7 @@ class HostsController extends Controller
     public function index()
     {
         $hosts = Host::all();
-      // CRAWLER
+      // CRAWLER prices
         $client = new Client;
         $crawler = $client->request('GET', 'https://hosting.review/best-web-hosting/');
         // $oldPrice = $crawler->filter('.old-price')->first()->text();
@@ -30,15 +30,17 @@ class HostsController extends Controller
             $prices[] = $price->nodeValue;
 
         };
+        // CRAWLER titles
+        // $providers = array();
+        // $class = $crawler->filterXPath('//td/a')->attr('title');
+        // // var_dump($class);
+        // $attributes = $crawler
+        //     ->filterXpath('//td/a')
+        //     ->extract(array('_text', 'title'));
+        // foreach ($attributes as $atribute) {
+        //     $providers[] = $atribute;
 
-        $providers = array();
-        $class = $crawler->filterXPath('//td/a')->attr('title');
-        // var_dump($class);
-
-        // foreach ((array)$class as $klase) {
-        //     $providers[] = $klase;
-        //     var_dump($providers);
-
+          
         // };
 
 
@@ -46,8 +48,8 @@ class HostsController extends Controller
             // 'oldPrice' => $oldPrice,
             // 'salePrice' => $salePrice,
             'prices' => $prices,
-            'providers' => $providers,
-            'hosts' => $hosts
+            'hosts' => $hosts,
+
         ]);
 
     }
@@ -85,7 +87,7 @@ class HostsController extends Controller
         $host->provider = $request->input('provider');
         $host->product = $request->input('product');
         $host->plan = $request->input('plan');
-        $host->price = $request->input('price');
+        // $host->price = $request->input('price');
         $host->provider_url = $request->input('provider_url');
 
         $host->save();

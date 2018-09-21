@@ -1,5 +1,5 @@
 {{-- EXSISTING PLANS ATVAIZDAVIMAS--}}
-<div>
+<div class="mb-4">
     <h2 class="h2">Exsisting plans</h2>
 </div>
 @include('inc.messages') {{-- FORM VALIDACIJOS ZINUTES--}}
@@ -13,7 +13,7 @@
                     <th scope="col">Provider</th>
                     <th scope="col">Product</th>
                     <th scope="col">Plan</th>
-                    <th scope="col">Price</th>
+                    {{-- <th scope="col">Price</th> --}}
                     {{-- <th scope="col">Sale Price</th> --}}
                 </tr>
             </thead>
@@ -26,7 +26,7 @@
                             <th> <a href="/hosts/{{$host->id}}">{{$host->provider}} </a></th>
                             <th>{{$host->product}}</th>
                             <th>{{$host->plan}}</th>
-                            <th>{{$host->price}} $ </th>
+                            {{-- <th>{{$host->price}} $ </th> --}}
                         </tr>
                     @endforeach
                 @else
@@ -37,16 +37,22 @@
         </div>
 {{-- VISOS KAINOS IS https://hosting.review/best-web-hosting/ --}}
     <div class="col-md-4">
-            <h2 class="mb-4">All host plan prices:</h2>
-                <ul class="plan-price">
+            <hr class="price-hrT">
+            <h2 class="prices-title"> Prices per month:</h2>
+                <div class="plan-price">
                     @foreach($prices as $price)
-                    <p> Price: {{$price}} <p>
+                    <h5>normal price | sale price</h5>
+                    <p> {{$price}} <p>
                     @endforeach
-                </ul>
+                    </div>
     </div>
 </div>     {{-- END ROW DIV --}}    
       
-
+    {{-- <ul class="">
+        @foreach($strFromArr as $provider)
+        <p> Provider: {{$provider}} <p>
+        @endforeach
+    </ul> --}}
 
         {{-- @foreach($providers as $provider)
           {{$provider}} 

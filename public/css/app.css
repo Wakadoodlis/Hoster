@@ -10508,12 +10508,38 @@ a.text-dark:focus {
   width: 80%;
 }
 
-.plan-price {
-  list-style: none;
+.plan-price h5 {
+  font-size: .8rem;
+  font-weight: 900;
+  border-top: 1px solid #dee2e6;
 }
 
-.plan-price li {
-  margin-bottom: 1rem;
+.plan-price p {
+  padding: 0;
+  margin: .128rem;
+  letter-spacing: .2rem;
+  font-size: 14px;
+}
+
+.prices-title {
+  padding: 0;
+  font-size: 1rem;
+  padding-top: .85rem;
+  padding-bottom: .24rem;
+  font-weight: 600;
+}
+
+.price-hrT {
+  margin: 0;
+}
+
+.price-hrB {
+  border-bottom: 2px solid #dee2e6;
+  margin: .5rem;
+}
+
+.table thead th {
+  border-bottom: 1px solid #dee2e6;
 }
 
 .navbar-laravel {

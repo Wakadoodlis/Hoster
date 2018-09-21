@@ -30,10 +30,10 @@
           {{Form::text('plan', $host->plan, ['class' => 'form-control', 'placeholder' =>'Plan...'])}}
       </div>
       {{-- PRICE IMPUTAS--}}
-      <div class="form-group">
+      {{-- <div class="form-group">
           {{Form::label('price', 'Price')}}
           {{Form::text('price', $host->price, ['class' => 'form-control', 'placeholder' =>'Price...'])}}
-      </div>
+      </div> --}}
 
       {{Form::hidden('_method','PUT')}}  {{-- KAD BUTU GALIMA UPDEITINTI- hidden forma su PUT--}}
       {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
