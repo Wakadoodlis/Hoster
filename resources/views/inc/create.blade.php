@@ -7,15 +7,18 @@
     <hr class="my-2 mb-1">
     <p class="lead pb-1">Fill all neccessary fields to create a new plan.</p> 
  </div>
-
+{{-- go back mygtukas --}}
+ <a href="/hosts" class="btn btn-default btn-marg mb-4">Go back</a>
 
  <div class="container">
     <div class="row">
         <div class="col-md-7">
-    @include('inc.messages')
- {{-- CREATE NEW HOST FORMA --}}
+    @include('inc.messages') {{-- validate zinutes --}}
+
+            {{-- CREATE NEW HOST FORMA --}}
+
             {!! Form::open(['action'=>'HostsController@store', 'method'=>'POST']) !!}
- {{-- provider url inputas --}}
+                {{-- provider url inputas --}}
                 <div class="form-group">
                     {{Form::label('provider_url', 'Provider_url')}}
                     {{Form::text('provider_url', '', ['class' => 'form-control labels', 'placeholder' =>'https://...'])}}
@@ -30,16 +33,17 @@
                     {{Form::label('plan', 'Plan name')}}
                     {{Form::text('plan', '', ['class' => 'form-control labels', 'placeholder' =>'Plan...'])}}
                     </div>
- {{-- provider  inputas --}}
+                {{-- provider  inputas --}}
                 <div class="form-group">
                     {{Form::label('provider', 'Provider')}}
                     {{Form::text('provider', '', ['class' => 'form-control labels', 'placeholder' =>'Provider...'])}}
                 </div>
- {{-- price url inputas --}}
+            {{-- price url inputas UZKOMENTUOTAS, KOL CRAWLED DATA NEBUS DB --}}
                 {{-- <div class="form-group">
                     {{Form::label('price', 'Price')}}
                     {{Form::text('price', '', ['class' => 'form-control labels', 'placeholder' =>'Price...'])}}
                 </div> --}}
+
             {{-- MYGTUKAS --}}
                 {{Form::submit('Add Host plan',['class'=>'btn btn-primary'])}}
 
@@ -48,11 +52,17 @@
         <div class="col-md-4">
             <section class="add-section float-right">
                 <h4>How to use this tool</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi vero suscipit repellat laboriosam? Debitis fugiat aperiam officiis inventore explicabo nesciunt at non pariatur sapiente? Quo vero repellat alias harum officia!
+                <p>Simple change the providers url, name and product by writing the new one.
                 </p>
+                    <br>
+                <em>      
+                    <h5>Dear users,</h5>
+                    <p>At this moment, "price" canot be added. We apologise for this inconvenience. </p>
+                    <p>Price adding is coming soon!</p>
+                </em> 
             </section>
         </div>
-    </div>   
+    </div>   {{-- END MAIN ROW--}}
  </div>  {{-- END CONTAINER--}}
 
 

@@ -4,8 +4,10 @@
     <h1 class="display-6 p-3">Edit hosts</h1>
    
  </div>
-
+    {{-- GO BACK MYGTUKAS --}}
+<a href="/hosts/{{$host->id}}" class="btn btn-default btn-marg mb-4">Go back</a>
 <div class="container">
+
     @include('inc.messages')
 {{-- EDIT FORMA --}}
     {!! Form::open(['action'=>['HostsController@update', $host->id], 'method'=>'POST']) !!}
