@@ -52,7 +52,7 @@
         <div class="col-md-4">
             <section class="add-section float-right">
                 <h4>How to use this tool</h4>
-                <p>Simple change the providers url, name and product by writing the new one.
+                <p> Add the providers url, name and product by writing the new one.
                 </p>
                     <br>
                 <em>      
